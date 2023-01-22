@@ -74,7 +74,7 @@ function Framework:IsTeammate(player)
     return player.Team == LocalPlayer.Team
 end
 
-local Connection, Target, Lock, Highlight = nil, nil, false, Instance.new("Highlight")
+local Connection, Target, Lock = nil, nil, false
 
 function Framework:GetClosestToCursor()
     local target, min_distance = nil, math.huge;
@@ -121,10 +121,10 @@ Connection = RunService.RenderStepped:Connect(function()
                     return;
                 end
 
-                Highlight.Parent = Aimlock.Parent
-                Highlight.Enabled = Framework.Highlight.Enabled
-                Highlight.FillColor = Framework.Highlight.Fill
-                Highlight.OutlineColor = Framework.Highlight.Outline
+                -- Highlight.Parent = Aimlock.Parent
+                -- Highlight.Enabled = Framework.Highlight.Enabled
+                -- Highlight.FillColor = Framework.Highlight.Fill
+                -- Highlight.OutlineColor = Framework.Highlight.Outline
 
                 mousemoverel((Position.X - Mouse.X) * Framework.Sensitivity, (Position.Y - Mouse.Y) * Framework.Sensitivity)
             end
